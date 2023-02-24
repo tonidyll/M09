@@ -1,28 +1,68 @@
-<html>
-   <head>
-      <script type="text/javascript" src="js/player.js"></script>
-      <link rel="stylesheet" type="text/css" href="css/player.css">
-      <meta charset="UTF-8">
-      <meta name="description" content="Video Player">
-      <meta name="keywords" content="HTML, CSS, JavaScript">
-      <meta name="author" content="Roberto">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Simple Video Player</title>
-   </head>
-   <body>
-      <div id="wrapper">
-         <div id='player_wrapper'>
-            <video id='video_player' width="auto" height="auto" controls>
-               <source src='video/sample.mp4' type='video/mp4'>
-            </video>
-            <div id='player_controls'>
-               <input type="image" src="images/play.png" onclick="play_vid()" id="play_button">
-               <input type="image" src="images/pause.png" onclick="pause_vid()" id="pause_button">
-               <input type="image" src="images/stop.png" onclick="stop_vid()" id="stop_button">
-               <img src="images/volume.png" id="vol_img">
-               <input type="range" id="change_vol" onchange="change_vol()" step="0.05" min="0" max="1" value="1">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Video Player</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+   <script type="text/javascript" src="js/player.js"></script>
+   <link rel="stylesheet" type="text/css" href="css/player.css">
+   <script src="https://kit.fontawesome.com/d60b336637.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+   <div class="container-fluid">
+      <div class="row">
+         <div class="col-md-12 row">
+            <div class="card col-md-8">
+               <div class="card-body bg-transparent">
+                  <h1 class="card-title">Documentals</h1>
+                  <h1 class="card-subtitle h4 mx-4 border-bottom border-dark my-2">Prod. by Antoni Davia</h1>
+                  <div class="embed-responsive embed-responsive-16by9">
+                     <video id='video_player' class="embed-responsive-item" controls>
+                        <source src='video/sample1.mp4' type='video/mp4'>
+                     </video>
+                  </div>
+                  <div id='player_controls' class="mt-2">
+                     <button class="btn btn-primary mr-2" onclick="play_vid()" id="play_button">
+                        <i class="fa fa-play"></i>
+                     </button>
+                     <button class="btn btn-primary mr-2" onclick="pause_vid()" id="pause_button">
+                        <i class="fa fa-pause"></i>
+                     </button>
+                     <button class="btn btn-primary mr-2" onclick="stop_vid()" id="stop_button">
+                        <i class="fa fa-stop"></i>
+                     </button>
+                     <button class="btn btn-primary mr-2" onclick="backward_vid()" id="backward_button">
+                        <i class="fa fa-backward"></i>
+                     </button>
+                     <button class="btn btn-primary mr-2" onclick="forward_vid()" id="forward_button">
+                        <i class="fa fa-forward"></i>
+                     </button>
+                     <img src="images/volume.png" id="vol_img">
+                     <input type="range" id="change_vol" onchange="change_vol()" step="0.05" min="0" max="1" value="1">
+                  </div>
+               </div>
+            </div>
+            <div class="card mt-4 col-md-4">
+               <div class="card-body">
+                  <h5 class="card-title">Other Videos</h5>
+                  <ul class="video-list">
+                     <li class="d-flex"><a href="#" onclick="change_video('video/sample1.mp4')">Cool wildlife<img src="images/vid1.png" class="w-25" alt=""></a> </li>
+                     <li><a href="#" onclick="change_video('video/sample2.mp4')">The wild<img src="images/vid2.png" class="w-25" alt=""></a></li>
+                     <li><a href="#" onclick="change_video('video/sample3.mp4')">The sea<img src="images/vid3.png" class="w-25" alt=""></a></li>
+                  </ul>
+               </div>
             </div>
          </div>
       </div>
-   </body>
+   </div>
+   <!-- Bootstrap and JavaScript dependencies -->
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
 </html>

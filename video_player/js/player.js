@@ -21,6 +21,23 @@ function stop_vid() {
     player.currentTime = 0;
 }
 
+function forward_vid() {
+   
+    player.currentTime += 10;
+ }
+ 
+
+ function backward_vid() {
+
+    player.currentTime -= 10;
+ }
+
 function change_vol() {
     player.volume = document.getElementById("change_vol").value;
 }
+
+function change_video(source) {
+    player.src = source;
+    play_vid();
+  }
+
